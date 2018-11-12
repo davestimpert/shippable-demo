@@ -1,4 +1,4 @@
 build:
   ci:
-    - gradle build
+    - ./gradlew build
     - docker build -t stimpert/shippable-demo .
