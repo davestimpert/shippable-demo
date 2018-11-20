@@ -4,11 +4,6 @@ build:
     - docker build -t stimpert/shippable-demo .
 
 jobs:
-  - name: shippable-demo_runCI
-    type: runCI
-    steps:
-      - OUT: ci-resource
-
   - name: hello-world-job
     type: runSh
     steps:
