@@ -18,3 +18,10 @@ jobs:
           - name: say-hello
             script:
               - echo "HELLO WORLD from hello-world-job"
+
+resources:
+  - name: ci-resource
+    type: params
+    versionTemplate:
+      params:
+        KEY1: value
