@@ -18,11 +18,10 @@ jobs:
 
   - name: hello-world-job
     type: runSh
-    triggerMode: serial
     steps:
-      - IN: ci-resource
-      - TASK:
-          - name: say-hello
-            script:
-              - echo "HELLO WORLD from hello-world-job"
+    - IN: ci-resource
+    - TASK:
+          script:
+            - |
+              echo "HELLO WORLD from hello-world-job"
 
