@@ -1,6 +1,6 @@
 build:
   ci:
-    - ./gradlew build -x test
+    - ./gradlew build
     - docker build -t stimpert/shippable-demo .
 
 jobs:
