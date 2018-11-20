@@ -11,4 +11,4 @@ jobs:
     - TASK:
           script:
             - |
-              echo "HELLO WORLD from hello-world-job"
+              echo "HELLO WORLD from hello-world-job in a branch"
