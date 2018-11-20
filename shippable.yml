@@ -11,7 +11,7 @@ resources:
         KEY1: value
 
 jobs:
-  - name: run-ci-job
+  - name: shippable-demo_runCI
     type: runCI
     steps:
       - OUT: ci-resource
