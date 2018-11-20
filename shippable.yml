@@ -2,3 +2,19 @@ build:
   ci:
     - ./gradlew build -x test
     - docker build -t stimpert/shippable-demo .
+
+jobs:
+  - name: run-ci-job
+    type: runCI
+    steps:
+      - OUT: ci-resource
+
+  - name: hello-world-job
+    type: runSh
+    triggerMode: serial
+    steps:
+      - IN: ci-resource
+      - TASK:
+          - name: say-hello
+            script:
+              - echo "HELLO WORLD from hello-world-job"
