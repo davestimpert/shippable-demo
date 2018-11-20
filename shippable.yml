@@ -3,13 +3,6 @@ build:
     - ./gradlew build -x test
     - docker build -t stimpert/shippable-demo .
 
-resources:
-  - name: ci-resource
-    type: params
-    versionTemplate:
-      params:
-        KEY1: value
-
 jobs:
   - name: shippable-demo_runCI
     type: runCI
@@ -19,9 +12,8 @@ jobs:
   - name: hello-world-job
     type: runSh
     steps:
-    - IN: ci-resource
+    - IN: shippable-demo_runCI
     - TASK:
           script:
             - |
               echo "HELLO WORLD from hello-world-job"
-
